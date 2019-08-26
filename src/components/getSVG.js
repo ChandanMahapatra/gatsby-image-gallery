@@ -26,10 +26,43 @@ const GetSVG = () => {
   return (
     <div>
       {data.images.edges.map(image => (
-        <img src={image.node.publicURL} alt={image.node.name} />
+        <div>
+          <img
+            src={image.node.publicURL}
+            alt={image.node.name}
+            type="text/plain"
+          />
+          <a href={image.node.publicURL} download>
+            Download SVG
+          </a>
+          <a
+            href={
+              "https://raw.githubusercontent.com/ChandanMahapatra/gatsby-image-gallery/master/src/images/photos/" +
+              image.node.name +
+              ".svg"
+            }
+            target="_blank"
+          >
+            Link to SVG code
+          </a>
+        </div>
       ))}
     </div>
   )
 }
 
 export default GetSVG
+
+/*
+exporting object with svg
+        <div>
+          <img src={image.node.publicURL} alt={image.node.name} />
+          <object data={image.node.publicURL} type="text/plain" />
+          <svg src={image.node.publicURL} type="text/plain" />
+          <a href={image.node.publicURL} download>
+            Download Image
+          </a>
+          <a>Link to Svg code</a>
+        </div>
+
+*/
