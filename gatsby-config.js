@@ -1,4 +1,5 @@
 module.exports = {
+  //pathPrefix: `/protected`,
   siteMetadata: {
     title: `Image Gallery`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -31,4 +32,8 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  //Add the code below in this file to make it work with Zeit.Now deploy for node auth protection
+  // pathPrefix: `/protected`,
+  //Change "build" like below in package.json
+  // "build": "gatsby build --prefix-path",
 }
